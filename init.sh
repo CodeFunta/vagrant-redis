@@ -1,8 +1,9 @@
 #!/bin/bash
 
 cd /tmp
+sudo apt-get update
+sudo apt-get install -y build-essential tcl
 
-sudo apt-get install -y make gcc
 
 wget http://download.redis.io/redis-stable.tar.gz
 tar xvzf redis-stable.tar.gz
@@ -10,6 +11,8 @@ cd redis-stable
 
 make
 sudo make install
+
+#sudo make test
 
 sudo mkdir /etc/redis
 sudo mkdir -p /var/redis/6379
